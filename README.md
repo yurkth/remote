@@ -1,6 +1,6 @@
 # Remote controller
 
-This program is a remote control that can operate the PC from the Raspberry Pi and smartphone.
+This program is a remote control that allows you to control your computer from a Raspberry Pi or smartphone.
 
 ![](https://user-images.githubusercontent.com/59264002/78930144-91765080-7ade-11ea-89c1-a74e85b3ffc2.png)
 
