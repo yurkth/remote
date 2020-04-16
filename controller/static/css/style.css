@@ -102,7 +102,7 @@ body::-webkit-scrollbar {
 }
 
 .overlay {
-    background: #4a4a4a;
+    background: #000;
     position: fixed;
     top: 0;
     bottom: 0;
