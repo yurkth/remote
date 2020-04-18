@@ -15,6 +15,9 @@ def main():
 
 @app.route("/api/key/<key>", methods=["GET"])
 def send_key(key):
+    """
+    キーを入力する
+    """
     if(key in pyautogui.KEYBOARD_KEYS):
         pyautogui.press(key)
     else:
@@ -24,12 +27,18 @@ def send_key(key):
 
 @app.route("/api/hotkey/<keys>", methods=["GET"])
 def send_hotkey(keys):
+    """
+    ホットキーを入力する
+    """
     pyautogui.hotkey(*keys.split("+"))  # +キーを入力する場合変える必要アリ
     return ""
 
 
 @app.route("/api/music", methods=["POST"])
 def post_music():
+    """
+    MusicBeeからJSONで楽曲データを受け取る
+    """
     global music_data
     music_data = request.get_data().decode()
     global updated
@@ -40,6 +49,9 @@ def post_music():
 
 @app.route("/api/music", methods=["GET"])
 def get_music():
+    """
+    楽曲データを取得する
+    """
     global updated
     if updated[request.remote_addr]:
         updated[request.remote_addr] = False
