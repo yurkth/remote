@@ -14,7 +14,7 @@ def main():
 
 
 @app.route("/api/key/<key>", methods=["GET"])
-def sendKey(key):
+def send_key(key):
     if(key in pyautogui.KEYBOARD_KEYS):
         pyautogui.press(key)
     else:
@@ -23,7 +23,7 @@ def sendKey(key):
 
 
 @app.route("/api/hotkey/<keys>", methods=["GET"])
-def sendHotkey(keys):
+def send_hotkey(keys):
     pyautogui.hotkey(*keys.split("+"))  # +キーを入力する場合変える必要アリ
     return ""
 
