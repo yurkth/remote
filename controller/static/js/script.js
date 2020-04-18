@@ -110,7 +110,7 @@ let app = new Vue({
         overlay: -1,
         date: '‍',  // U+200D
         nowPlaying: { title: 'unknown title', artist: 'unknown artist', album: 'unknown album', artwork: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=' },
-        operates: {
+        operates: { // ボタン
             play: [
                 {
                     icon: 'mdi mdi-fast-forward mdi-36px mdi-flip-h',
@@ -153,7 +153,7 @@ let app = new Vue({
                     endpoint: 'hotkey/ctrl+shift+s'
                 }
             ],
-            empty: [
+            empty: [ // 未使用のボタン
                 {
                     icon: '',
                     endpoint: ''
@@ -169,7 +169,7 @@ let app = new Vue({
             ]
         }
     },
-    head: {
+    head: { // 時計の時間合わせ
         style() {
             const time = new Date()
             const hour = time.getHours()
@@ -214,7 +214,7 @@ let app = new Vue({
     }
 })
 
-setInterval(() => {
+setInterval(() => { // 再生中の楽曲と現在時刻の取得
     fetch('api/music')
         .then(response => response.json())
         .then(data => {
