@@ -2,63 +2,63 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Remote">
-    <link rel="apple-touch-icon" href="../static/img/icon.png">
-    <title>Remote control</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Remote">
+  <link rel="apple-touch-icon" href="../static/img/icon.png">
+  <title>Remote control</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.0.45/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
-    <div id="app">
-        <div class="sandbox">
-            <div class="tile is-ancestor" :style="{height: `calc(${window.innerHeight}px - 1.5rem)`}">
-                <div class="tile is-7 is-hidden-mobile is-vertical is-parent">
-                    <div class="tile is-child notification" @click="overlay = 0">
-                        <p class="title is-2">[[ date ]]</p>
-                    </div>
-                    <div class="tile is-child notification">
-                        <clock :size="Math.min(window.innerHeight * 0.6, window.innerWidth * 0.45)"></clock>
-                    </div>
-                </div>
-                <div class="tile is-5 is-vertical is-parent">
-                    <div class="tile is-child notification">
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="artwork" :src="`data:image/png;base64,${nowPlaying.artwork}`">
-                            </div>
-                            <div class="media-content">
-                                <p class="is-size-5 has-text-weight-bold">[[ nowPlaying.title ]]</p>
-                                <p class="is-size-6">[[ nowPlaying.artist ]]</p>
-                                <p class="is-size-6">[[ nowPlaying.album ]]</p>
-                            </div>
-                        </div>
-                        <buttons :operate="operates.play"></buttons>
-                        <buttons :operate="operates.volume"></buttons>
-                    </div>
-                    <div class="tile is-child notification">
-                        <buttons :operate="operates.screen"></buttons>
-                        <buttons :operate="operates.empty"></buttons>
-                    </div>
-                </div>
-            </div>
-            <div class="overlay" :style="{zIndex: overlay}">
-                <img src="../static/img/overlay.png" @click="overlay = -1">
-            </div>
+  <div id="app">
+    <div class="sandbox">
+      <div class="tile is-ancestor" :style="{height: `calc(${window.innerHeight}px - 1.5rem)`}">
+        <div class="tile is-7 is-hidden-mobile is-vertical is-parent">
+          <div class="tile is-child notification" @click="overlay = 0">
+            <p class="title is-2">[[ date ]]</p>
+          </div>
+          <div class="tile is-child notification">
+            <clock :size="Math.min(window.innerHeight * 0.6, window.innerWidth * 0.45)"></clock>
+          </div>
         </div>
+        <div class="tile is-5 is-vertical is-parent">
+          <div class="tile is-child notification">
+            <div class="media">
+              <div class="media-left">
+                <img class="artwork" :src="`data:image/png;base64,${nowPlaying.artwork}`">
+              </div>
+              <div class="media-content">
+                <p class="is-size-5 has-text-weight-bold">[[ nowPlaying.title ]]</p>
+                <p class="is-size-6">[[ nowPlaying.artist ]]</p>
+                <p class="is-size-6">[[ nowPlaying.album ]]</p>
+              </div>
+            </div>
+            <buttons :operate="operates.play"></buttons>
+            <buttons :operate="operates.volume"></buttons>
+          </div>
+          <div class="tile is-child notification">
+            <buttons :operate="operates.screen"></buttons>
+            <buttons :operate="operates.empty"></buttons>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" :style="{zIndex: overlay}">
+        <img src="../static/img/overlay.png" @click="overlay = -1">
+      </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script src="https://cdn.rawgit.com/ktquez/vue-head/master/vue-head.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="../static/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <script src="https://cdn.rawgit.com/ktquez/vue-head/master/vue-head.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../static/js/script.js"></script>
 </body>
 
 </html>
